@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+    color: rgb(32, 24, 53);
+    background: url(https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Yellow-Desk-Simple-Background-Image.jpg);
+    no-repeat center center fixed;
+    background-size: cover;
+
+  }
+
+
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  
+}
+
+#form-block input[type="text"],
+#form-block input[type="email"],
+#form-block input[type="tel"],
+#form-block input[type="url"],
+#form-block textarea,
+#form-block button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#form-block {
+  background: rgb(247, 247, 190);
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#form-block h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#form-block h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#form-block input[type="text"],
+#form-block input[type="email"],
+#form-block input[type="tel"],
+#form-block input[type="url"],
+#form-block textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#form-block input[type="text"]:hover,
+#form-block input[type="email"]:hover,
+#form-block input[type="tel"]:hover,
+#form-block input[type="url"]:hover,
+#form-block textarea:hover {
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid rgb(153, 152, 152);
+}
+
+#form-block textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#form-block button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: rgb(52, 42, 78);
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#form-block button[type="submit"]:hover {
+    background: rgb(32, 24, 53);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#form-block button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(68, 68, 68, 0.5);
+}
+
+.go-back {
+  text-align: center;
+}
+
+#form-block input:focus,
+#form-block textarea:focus {
+  outline: 0;
+  border: 1px solid rgb(155, 153, 153);
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linking external stylesheet -->
+    <link rel="stylesheet" href="./writeus.css">
+    <title>Write Us</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="form-block" method="post">
+          {% csrf_token %}
+            <h3>Write Us</h3>
+            <h4>Share your thoughts or suggestions</h4>
+            <fieldset>
+                <input placeholder="Your Name" name="name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Email Address" name="email" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Phone Number" name="phone" type="tel" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Type your message/suggestion here" name="feed" tabindex="4" required></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="submit-btn">Submit</button>
+            </fieldset>
+            <p class="go-back"><a href="{%url 'home'%}">Go Back to Home Page</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,571 @@
+
+ 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+body {background: lightgoldenrodyellow;
+  font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;
+width: 100%;}
+
+.div1 {
+  width: 1000px;
+  height: 645px;
+  border: 5px solid black;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding-left: 1%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 110%;
+  color: rgb(78, 4, 148);
+}
+
+blockquote.dotted {border-style: dotted;
+color:rgba(0, 0, 0, .9)}
+h2{
+  text-align: center;
+  color: coral;
+}
+h1{
+  text-align: center;
+}
+
+h4{
+  text-align: center;
+}
+h5{
+  text-align: center;
+}
+
+.button {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+
+
+/* Caption text */
+.text {
+  color: maroon;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 900px) {
+  .text {font-size: 11px}
+}
+
+/* Clearing floats */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* Mini reset, no margins, paddings or bullets */
+.menu,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Main level */
+.menu {			
+  margin: 0px auto;
+  width: 100px;
+  /* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  padding-left: 35rem;
+  	
+}
+
+.menu > li {
+  background: rgb(235, 83, 83);
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+}
+
+.menu a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial, Helvetica;
+  font-size: 14px;
+}		
+
+.menu li:hover {
+  background: #34495e;
+}		
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+}
+
+/* Dropdown */
+.submenu {          
+  position: absolute;
+  width: 200px;
+  left: 50%; margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+}
+
+.submenu li {
+  background-color: #e74c3c;
+  position: relative;
+  overflow: hidden;		
+}						
+
+.submenu > li > a {
+  padding: 1em 2em;			
+}
+
+.submenu > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;			
+  box-shadow: 0 0 50px rgba(0, 0, 0, .9);			
+}		
+
+/* Odd stuff */
+.submenu > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}				
+
+/* Even stuff */
+.submenu > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;			
+}
+
+.submenu li {
+  transition: .2s ease transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}		
+
+.menu > li:hover .submenu li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);			
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);			
+}
+
+blockquote{ color: red}
+
+.button {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+.music-list {
+  padding-top: 50px;
+}
+
+.sub-head-title {
+  text-align: left;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+  color: rgb(47, 42, 59);
+  padding-top: 20px;
+  
+}
+
+.list-container {
+  text-align: left;
+  font-family: sans-serif;
+  color: rgb(43, 30, 75);
+  line-height: 35px;
+}
+
+.ref-links{
+  color:darkblue;
+  background: lightblue;
+  font-size: larger;
+  font-size: 20px;
+  
+}
+
+
+.ref-links {
+  text-align: left;
+  font-family: sans-serif;
+  color: rgb(43, 30, 75);
+  
+}
+h3{
+  text-align: center;
+}
+.more-list a{
+  text-decoration: none;
+  color: rgb(43, 30, 75);
+  
+}
+
+.more-list a:hover {
+  color: rgb(61, 75, 153);
+}
+</style>
+</head>
+<body>
+ 
+
+<h2>A TRIBUTE TO S.P.BALASUBRAMANYAM</h2>
+
+
+<hr size="3" width="100%" color="black">
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201901/SPB.jpeg?O_.RRwgx86bqWHWTwOGRUKLpm9hbdpvb&size=770:433" style="width:100%">
+  <div class="text">THE LEGENT</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://static.india.com/wp-content/uploads/2020/08/sp.jpg" style="width:100%">
+  <div class="text">THE HERO</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://i1.wp.com/livewire.thewire.in/wp-content/uploads/2020/10/SPB-2-1080x600.jpeg?fit=1080%2C600&ssl=1" style="width:100%">
+  <div class="text">THE ROLE MODEL</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+  <showcase>
+    <div class="container">
+      <div class="header-container">
+    
+      <h1>S. P. BALASUBRAHMANYAM</h1>
+      <h4>
+        Singer . Actor . Music director . Dubbing artist . Film producer
+      </h4>
+      <h5>[ 4 June 1946 – 25 September 2020 ]</h5>
+    </div>
+    <div class="info-container">
+      <div class="about">
+        <p>Panditaradhyula Balasubrahmanyam also referred to as S. P. B was an Indian musician, playback
+          singer, music director, actor, dubbing artist, and film producer who worked predominantly in Telugu, Tamil,
+          Kannada, Hindi, and Malayalam films. Widely regarded as one of the greatest singers of India, He won six
+          National Film Awards for Best Male Playback Singer for his works in four different languages; Telugu, Tamil,
+          Kannada, and Hindi. According to some sources, he held the Guinness World Record for recording the highest
+          number of songs by a singer with over 40,000 songs. He recorded 21 songs in Kannada for the composer Upendra
+          Kumar in Bengaluru from 9 am to 9 pm on 8 February 1981. In addition, he recorded 19 songs in Tamil and 16
+          songs in Hindi in a day, which has also been called a record.</p>
+        <p>Even when he talks, he seems to sing. In whatever language you’ve heard him, and whatever kind of song you
+          love him for, there’s no way you wouldn’t have heard an S.P. Balasubrahmanyam song if you’re an Indian,
+          because he’s sung more than 40,000!.Despite a fabulous musical career spanning 49 years in the Telugu, Tamil,
+          Kannada, Hindi, and Malayalam film industries, SPB remains down to earth.</p>
+        <blockquote>I don’t know the ABCD of the theory of music. I don’t know how to write notations even now. I never
+          went to anybody to learn music. But I went to everybody to learn music by listening to so many people!
+          -SPB
+        </blockquote>
+        
+
+
+        <h3 class="sub-head-title">Early life and background</h3>
+        <p>Balasubrahmanyam was born in Nellore, Madras Presidency (present-day Andhra Pradesh) into a Telugu Brahmin family.His father, S. P. Sambamurthy, was a Harikatha artist who also acted in plays. His mother was Sakunthalamma, who died on 4 February 2019. He had two brothers and five sisters, including singer S. P. Sailaja. His son S. P. Charan is also a popular South Indian singer, actor and producer.
+
+          Balasubrahmanyam developed an interest in music at an early age, studied musical notations, and learned music. He enrolled at the JNTU College of Engineering Anantapur with the intention of becoming an engineer. He discontinued his studies early due to typhoid and joined as an associate member the Institution of Engineers, Chennai.
+          
+          Balasubrahmanyam continued to pursue music during his engineering studies and won awards at singing competitions. In 1964, he won the first prize in a music competition for amateur singers organized by the Madras-based Telugu Cultural Organization. He was the leader of a light music troupe composed of Anirutta (on the harmonium), Ilaiyaraaja (on guitar and later on harmonium), Baskar (on percussion) and Gangai Amaran (on guitar). He was selected as the best singer in a singing competition which was judged by S. P. Kodandapani and Ghantasala. Often visiting music composers seeking opportunities, his first audition song was "Nilave Ennidam Nerungadhe". It was rendered by veteran playback singer P. B. Srinivas, who used to write and give him multi-lingual verses in Telugu, Tamil, Hindi, Kannada, Malayalam, Sanskrit, English and Urdu</p>
+
+          <h3 class="sub-head-title">Career:-</h3>
+          <h4 class="sub-head-title">1960s–1970s</h4>
+
+          <p>Balasubrahmanyam made his debut as a playback singer on 15 December 1966 with Sri Sri Sri Maryada Ramanna, a Telugu film scored by his mentor, S. P. Kodandapani. The first non-Telugu song that he recorded just eight days after his debut Telugu song was in Kannada in 1966 for the film Nakkare Ade Swarga, starring Kannada comedy stalwart T. R. Narasimharaju. He recorded his first Tamil song "Athaanodu Ippadi Irundhu Eththanai Naalaachu", a duet with L. R. Eswari under the musical direction of M. S. Viswanathan for the film Hotel Ramba, which was never released. Other early songs he sang were duets with P. Susheela, "Iyarkai Ennum Ilaya Kanni" in the 1969 film Shanti Nilayam, starring Gemini Ganesh, and "Aayiram Nilavae Vaa" for M. G. Ramachandran in Adimaippenn.His first song with S. Janaki was "Pournami Nilavil Pani Vizhum Iravil" in Kannippenn. He was then introduced to the Malayalam film industry by G. Devarajan in the film Kadalppalam.</p>
+
+          <p>In the 1970s, he also worked with M. S. Viswanathan in Tamil movies for actors such as M. G. Ramachandran, Sivaji Ganesan and Gemini Ganesan. He recorded duets with P. Susheela, S. Janaki, Vani Jayaram and L. R. Eswari. Balasubrahmanyam's association with Ilaiyaraaja began even before Ilaiyaraaja came to the cine field. In the early days, he used to sing in towns and villages all over south India and Ilaiyaraaja, then an unknown harmonium and guitar player accompanied him in his concerts</p>
+        
+          <h4 class="sub-head-title">1980s</h4>
+          <p>Balasubrahmanyam came to international prominence with the 1980 film Sankarabharanam. The film is considered to be one of the best films ever to emerge from the Telugu film industry.Directed by K. Vishwanath, the film's soundtrack was composed by K.V. Mahadevan, and led to an increase in the usage of Carnatic music in Telugu cinema.Balasubrahmanyam began to record more songs in Telugu and other South Indian languages, especially for Ilaiyaraaja with S. Janaki, the trio considered to be highly successful in the Telugu film industry from the late 1970s and throughout the 1980s. The songs were based on classical music, such as in Saagara Sangamam (1983) and Rudraveena (1988), for which both Ilaiyaraaja and Balasubrahmanyam won National Awards for Best Music Director and Best Male Playback Singer respectively.</p>
+          <p>n 1989, Balasubrahmanyam was the playback singer for actor Salman Khan in the blockbuster Maine Pyar Kiya.The soundtrack for the film was very successful and he won a Filmfare Award for Best Male Playback Singer for the song Dil Deewana. For much of the next decade, Balasubrahmanyam continued as the "romantic singing voice" on the soundtracks of Khan's films.</p>
+          
+          <h4 class="sub-head-title">1990s</h4>
+          <p>In the 1990s, he worked with composers such as Vidyasagar, M. M. Keeravani, Hamsalekha, S. A. Rajkumar and Deva among others, but his association with A.R.Rahman turned out be a major success.
+
+            Balasubrahmanyam recorded three songs for A. R. Rahman in the latter's debut film Roja. He had a long-time association with Rahman right from Roja. Other popular songs include "July Maadham" from Pudhiya Mugam, which also marked the debut of singer Anupama,"Mannoothu Manthayilae" from Kizhakku Cheemayile which was a folk number and he almost sang all songs in the musical love story Duet and "Thanga Thaamarai" from Minsara Kanavu which fetched him, the sixth and latest of his National Film Awards for Best Male Playback Singer</p>
+            <h4 class="sub-head-title">2000s</h4>
+            <p>In 2013, Balasubrahmanyam recorded the title song for Chennai Express – "Chennai Express", singing for the lead actor Shahrukh Khan, under the music direction of Vishal-Shekhar, breaking his 15-year hiatus from Hindi cinema music.
+
+              In May 2020, SPB crooned a song on humanity titled "Bharath Bhoomi" which was composed by Ilaiyaraaja as a tribute to the people such as police, doctors, nurses and janitors who have been significantly working amid COVID-19 pandemic.The video song was officially unveiled by Ilaiyaraaja through his official YouTube account on 30 May 2020 in both Tamil and Hindi languages.</p>
+              <h3 class="sub-head-title">Personal life</h3>
+              <p>Balasubrahmanyam was married to Savithri and has two children, a daughter Pallavi, and a son S. P. B. Charan, also a playback singer and film producer.</p>
+              
+              <h3 class="sub-head-title">Illness and death</h3>
+              <p>On 5 August 2020, Balasubrahmanyam tested positive for COVID-19 during the COVID-19 pandemic in India and was admitted to MGM Healthcare in Chennai.Subsequently, his health deteriorated and he was shifted to the intensive care unit in a critical state. He required a ventilator and extracorporeal membrane oxygenation (ECMO) support.His son Charan provided periodic updates over social media, while members of the Tamil film industry engaged in a mass prayer via Zoom on 20 August and candlelight vigils were held by fans outside the hospital.Similarly many actors of Telugu film industry urged people to pray for his life, many Tollywood music composers also organised virtual mass prayers. Members of the Kannada film industry got together for another mass prayer on 4 September 2020 in Bengaluru. On 7 September 2020, Balasubrahmanyam tested negative for the coronavirus, although he remained using a ventilator and ECMO. He started showing signs of recovery, including light speech and physical activities.However, the hospital released a statement on 24 September stating that he became "extremely critical" and was on "maximal life support".</p>
+              <p>Balasubrahmanyam died on 25 September 2020 at 1:04 pm (IST) of cardio-respiratory arrest after over a month-long hospitalisation.He was buried at his farm house in Thamaraipaakkam, Thiruvallur district with state honours on 26 September 2020.</p>
+              
+              <div class="div1">
+                <h2>S.P.BALASUBRAHMANYAM</h2>
+                <br>
+                <li><b>Birth name  : </b><b>S</b>ripathi <b>P</b>anditaradhyula <b>B</b>alasubrahmanyam</li>
+                <br>
+                <li><b>Born  : </b>4 June 1946 - Nellore, Madras Presidency, British India (present-day Andhra Pradesh)</li>
+                <br>
+                <li><b>Education Qualification  : </b>Engineering(dropped)</li>
+                <br>
+                <li><b>College/University  : </b>JNTU College of Engineering Anantapur, Andhra Pradesh</li>
+                <br>
+                <li><b>Mother name  :  </b>Sakunthalamma  </li>
+                <br>
+                <li><b>Father name  :  </b>S.P.Sambamurthy</li>
+                <br>
+                <li><b>Siblings  :  </b>He had two brothers and five sisters.</li>
+                <br>
+                <li><b>Wife name  :  </b>Savitri Balasubrahmanyam</li>
+                <br>
+                <li><b>Chidren name  :  </b>S. P. B. Charan, Pallavi Balasubrahmanyam</li>
+                <br>
+                <li><b>Profession(s)	:  </b>Singer,Actor,Music,director,Dubbing artist,Film producer</li>
+                <br>
+                <li><b>Fomous for  : </b>Singing over 40,000 songs in 16 indian languages</li>
+                <br>
+                <li><b>Died  : 	</b>25 September 2020 (aged 74) - Chennai, Tamil Nadu, India</li>
+                <br>
+                <li><b>place of death  :  </b>bMGM Hospital, Chennai, Tamil Nadu,India</li>
+                <br>
+                <li><b>Honours	 : </b>Padma Vibhushan (2021) (Posthumously),
+                                Padma Bhushan (2011),
+                                Padma Shri (2001)</li>
+            </div>
+      </div>
+      </div>
+      </div>
+      </div>
+  </showcase>
+</header>
+<hr size="3" width="100%" color="black">
+
+
+<div class="ref-links">
+  <h3 class="sub-head-title">CONTENTS</h3>
+  <ul>
+    <p class="more-list"><a href="{%url 'trail1'%}" target="_blank"><u>S.P.B in different professions</u>(click here)</a></p>
+    <p class="more-list"><a href="{%url 'trail2'%}"
+        target="_blank"><u>A quick glance of notable achievements</u>(click here)</a></p>
+    <p class="more-list"><a href="{%url 'trail7'%}"
+        target="_blank"><u>S.P.B hit songs</u>(click here)</a></p>
+    <p class="more-list"><a href="{%url 'trail3'%}" target="_blank"><u>SPB, the legend with the legends of his era</u>(click here)</a>
+    </p>
+    <p class="more-list"><a
+        href="{%url 'trail4'%}"
+        target="_blank"><u>S.P.B photo gallery</u>(click here)</a></p>
+        <p class="more-list"><a
+          href="{%url 'trail6'%}"
+          target="_blank"><u>S.P.B with family</u>(click here)</a></p>
+    <p class="more-list">If any information changes required or for any suggestion <a href="{%url 'trail5'%}"><u>click
+        here</u></a> to write us</p><br>
+        <marquee><p>clicks any link to explore more about SPB </p></marquee>
+  </ul>
+</div>
+<hr size="3" width="100%" color="black">
+
+<div class="music-list">
+  <h3 class="sub-head-title">Most Famous Songs of S.P.B</h3>
+  <ul class="song-list list-container">
+    <li class="song1">Naguva Nayana [Pallavi Anu Pallavi - Kannada - 1983] </li>
+    <li class="song2">Ee Bhoomi Bannada Buguri [Mahaakshatriya - Kannada - 2014]</li>
+    <li class="song3">Ee Sundara [Amrutha Varshini - Kannada - 1996]</li>
+    <li class="song4">Kaadhak Rojave [Roja - Tamil - 1992]</li>
+    <li class="song5">En Kadhalae[Duet - Tamil - 1994]</li>
+    <li class="song6">James Bond Super Power [Adayalam - Malayalam - 2021]</li>
+    <li class="song7">Dil Deewana [Maine Pyar Kiya - Hindi - 1989]</li>
+    <li class="song8">Suvvi Suvvi [Chuttalabbai - Telugu - 2015]</li>
+  </ul>
+</div>
+<div class="movies">
+  <h3 class="sub-head-title">Movies in S.P.B as actor</h3>
+  <ul class="movie-list list-container">
+    <li class="movie1">Priyamaanavale [Tamil]</li>
+    <li class="movie2">Moone Moonu Varthai [Tamil]</li>
+    <li class="movie3">Muddina Mava [Kannada]</li>
+    <li class="movie4">Tirugu Bhana [Kannada]</li>
+    <li class="movie5">Shakti [Telugu]</li>
+    <li class="movie6">Mithunam [Telugu]</li>
+  </ul>
+</div>
+<div class="awards">
+  <h3 class="sub-head-title">Awards won by S.P.B </h3>
+  <ul class="award-list list-container">
+    <li class="award1">Padma Shri by Government of India</li>
+    <li class="award2">Padma Bhushan by Government of India</li>
+    <li class="award3">Karnataka Rajyothsava Award by Government of Karnataka</li>
+    <li class="award4">Filmfare Awards South [Won 3 times Best Male Playback Singer] </li>
+    <li class="award5">SIIMA Lifetime Achievement Award</li>
+    <li class="award6">Kala Pradarshini Ghantasala Puraskar</li>
+  </ul>
+</div>
+</div>
+<marquee><p>Thank you for visiting our website</p></marquee>
+
+<div Style="background-color: lightblue;color: black;padding: 20px;margin: 20px 50px 20px 50px;">
+<a  href="https://en.wikipedia.org/wiki/S._P._Balasubrahmanyam" target = "blank">For more information visit on spb, please click the link provided here</a>
+ 
+
+
+
+
+
+</body>
+</html> 
+

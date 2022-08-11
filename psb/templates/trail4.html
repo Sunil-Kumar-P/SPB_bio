@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title>photo</title>
+        <style>
+            body {
+  font-family: sans-serif;
+   margin: 0;
+   background: rgb(245, 153, 153);
+}
+.button {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 50px;
+  color: rebeccapurple;
+}
+
+p {
+  text-align: center;
+  margin-bottom:60px;
+  color: red;
+  font-size: 120%;
+  
+}
+
+h3{
+  text-align:center; 
+  line-height:80px;
+  font-weight:normal;
+  color:black;
+
+}
+
+.masonry { /* Masonry container */
+    -webkit-column-count: 4;
+  -moz-column-count:4;
+  column-count: 4;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+   margin: 1.5em;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+.item {
+    display: inline-block;
+    background: #fff;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    -webkit-transition:1s ease all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+.item img{max-width:100%;}
+
+@media only screen and (max-width: 320px) {
+    .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px){
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+@media only screen and (min-width: 1201px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+<h2><u>S.P.BALASUBRAMANYAM PHOTO GALLERY</u></h2>
+
+<div class="masonry">
+  <div class="item">
+    
+    <img src="https://spbindia.com/wp-content/uploads/2018/11/spb-dubbing-artist.jpg?v=1595571367">
+  </div>
+  <div class="item">
+    
+    <img src="https://spbindia.com/wp-content/uploads/2018/11/spb-singer.jpg?v=1595571373">
+  </div>
+  <div class="item">
+    
+    <img src="https://spbindia.com/wp-content/uploads/2018/11/spb-actor.jpg?v=1595571371">
+  </div>
+  <div class="item">
+    
+    <img src="https://spbindia.com/wp-content/uploads/2018/11/spb-music-director.jpg?v=1595571370">
+  </div>
+  <div class="item">
+    
+    <img src="https://cdn.siasat.com/wp-content/uploads/2020/06/Balasubramanyam.jpg">
+  </div>
+  <div class="item">
+    
+    <img src="https://spbindia.com/wp-content/uploads/2018/12/SPB-0188.jpg" width="300" height="330">
+  </div>
+  <div class="item">
+    
+    <img src="https://img.onmanorama.com/content/dam/mm/en/entertainment/music/images/2020/9/25/spb-malayalam-songs.jpg" width="300" height="250">
+  </div>
+  <div class="item">
+    
+    <img src="https://www.behindwoods.com/uploads/5f6de99d7fff8.jpg" width="300" height="270">
+  </div>
+  <div class="item">
+    
+    <img src="https://www.thetelugufilmnagar.com/wp-content/uploads/2019/06/SPB.jpg" width="300" height="270">
+  </div>
+  <div class="item">
+    
+    <img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2020/9/25/w900X450/SPB_EPS.jpg" width="300" height="270">
+  </div>
+  <div class="item">
+    
+    <img src="https://spbindia.com/wp-content/uploads/2018/11/spb-profile-02.png" width="250" height="270">
+  </div>
+    <div class="item">
+    
+    <img src="https://data1.ibtimes.co.in/en/full/713934/sp-balasubramaniam-ilaiyaraaja.jpg" width="300" height="240">
+  </div>
+
+  
+
+
+</div>
+<a href="{%url 'home'%}">
+  <button class="button">Go back to home page</button>
+</a>
+
+<marquee><p>A tribute to S. P. Balasubrahmanyam</p></marquee>
+</body>
+</html>
